@@ -53,7 +53,7 @@ You do not need to modify any frontend code, only the backend, but feel free to 
 1. [ ] We will be using this connection string to connect to the database via a pool. You can see the syntax [here](https://node-postgres.com/features/connecting#Connection%20URI).
    - We are using a pool to manage our connections to the database which has a few advantages. There is overhead in establishing new connections to the database that we don't want to wait on for every single query we send. Having a pool of connections at the ready makes our database queries more performant. Read more about it [here](https://node-postgres.com/features/pooling).
 1. [ ] Now we are ready to send queries using `pool.query()` to the database. At the bottom of this file, we are exporting an object with a property called query, which is a function that will return the invocation of `pool.query()`. In between this, we can add `console.log` for all the queries being made for tracking purposes.
-   - NOTE: While we could export the pool from here and just use `pool.query()` directly from the controller, exporting this way let's us controller all the database queries from one file location and any logic or logging that needs to change lives in this one file.
+   - NOTE: While we could export the pool from here and just use `pool.query()` directly from the controller, exporting this way lets us control all the database queries from one file location, and any logic or logging that needs to change lives in this one file.
 1. [ ] Here is the ER diagram of the database again to reference for the upcoming sections:
        ![pg_schema](/docs/assets/images/schema.png)
 
