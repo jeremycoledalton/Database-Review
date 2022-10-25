@@ -125,10 +125,9 @@ You do not need to modify any frontend code, only the backend, but feel free to 
      ![mongodb_atlas_connect](/docs/assets/images/mongodb_atlas_connect.png)
    - Setup connection security by whitelisting your connection IP address and creating a MongoDB User. Remember this username and password for the next step.
    - For the connection method, select "Connect Your Application" and copy the connection string.
-   - For `macOS` users only, you will need to move the bson and json files out of the `dump/starwars/` folder and place them directly into the `dump/` folder for the following step to work.
    - Open a terminal in this project directory and run the command below. Make sure you have replaced `<password>` in your connection string with your MongoDB user password created earlier and wrap the entire string with quotes (depending on your OS or shell terminal version, you may need to use either single quotes *or* double quotes. This command will create a database called **starwars** in your cloud database with data from the `dump/` folder.
    ```
-    mongorestore --uri="<YOUR_CONNECTION_STRING>"
+    mongorestore -d=starwars --uri="<YOUR_CONNECTION_STRING>"
    ```
    - You can check to see if the database was restored properly by clicking on the **COLLECTIONS** button from the MongoDB Atlas site.
    - NOTE: Take a look at the **people** collection of your database and see the documents that are stored there. To take full advantage of the performance benefits of using a NoSQL database, some data have been _denormalized_. Which of the keys in the database do you think those are? What are the pros and cons of doing such denormalization?
